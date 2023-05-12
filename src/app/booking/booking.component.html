@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+  </head>
+  <body>
+    <div class="login-page">
+      <div class="avatar">
+        <img src="https://cdn.pixabay.com/photo/2014/04/02/14/10/female-306407_960_720.png" alt="Avatar">
+      </div>
+      <div class="form">
+        <h2>Booking</h2>
+        <form #bookingForm="ngForm" (ngSubmit)="BookingFormSubmit(bookingForm.value)" novalidate>
+            <!-- <input type="text" ngModel #name="ngModel" name="name" minlength="6" maxlength="50" required placeholder="Name">
+             <input type="text" ngModel #mobileNumber= "ngModel" name="mobileNumber" minlength="3" maxlength="10" required placeholder="mobileNumber"> -->
+            <h1>BookingDate</h1> <input type="date" ngModel #bookingDate="ngModel" name="bookingDate"  required placeholder="bookingDate">
+            <button class="btn btn-primary btn-lg" [disabled]="!bookingForm.valid" a routerLink ="/payment">Book Now</button>
+            </form>
+      </div>
+    </div>
+    <br> <br> <br> <br> 
+  </body>
+</html>
+<!-- <div *ngIf="mobileNumber.errors?.['required'] && mobileNumber.touched">mobileNomber  is mandatory</div> 
+<div *ngIf="bookingDate.errors?.['required'] && bookingDate.touched">bookingDate is mandatory</div>-->

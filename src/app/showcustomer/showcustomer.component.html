@@ -1,0 +1,61 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  </head>
+  
+  <div class="container">
+    <div class="modal fade" id="custModel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal">&times;</span>
+                    <h4 class="modal-title">Update Form</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-group">
+                        Enter Name: <input type="text" name="fullName" [(ngModel)]="editObject.fullName"
+                            class="form-control" enable="false"><br />
+                        Enter MobileNumber: <input type="text" name="mobileNumber" [(ngModel)]="editObject.mobileNumber"
+                            class="form-control"><br />
+                        Enter Address: <input type="text" name="address" [(ngModel)]="editObject.address"
+                            class="form-control"><br />
+                        Enter Email Id: <input type="text" name="email" [(ngModel)]="editObject.email"
+                            class="form-control"><br />
+                         Enter Password: <input type="text" name="password" [(ngModel)]="editObject.password"
+                            class="form-control"><br />
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-sm" (click)="updateCust()" data-dismiss="modal">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+  
+    <table class="table table-bordered table-striped table-hover table-sm text-center">
+        <thead>
+            <tr class="bg-info text-white">
+          <th>customerId</th>
+          <th>CustomerName</th>
+          <th>MobileNumber</th>
+          <th>Address</th>
+          <th>Email</th>
+          <th>Password</th>
+          <th colspan="2">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor='let cust of customer'>
+          <td>{{cust.customerId}}</td>
+          <td>{{cust.fullName }}</td>
+          <td>{{cust.mobileNumber }}</td>
+          <td>{{cust.address }}</td>
+          <td>{{cust.email }}</td>
+          <td>{{cust.password}}</td>
+          <td><button (click)="deleteCust(cust.customerId)" class="glyphicon glyphicon-trash"></button></td>
+          <td><button (click)="showEditPopup(cust)" class="glyphicon glyphicon-pencil"></button>
+        </tr>
+      </tbody>
+      </table>
+    </div>

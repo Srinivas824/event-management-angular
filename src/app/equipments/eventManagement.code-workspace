@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"name": "eventManagement",
+			"path": "../../.."
+		},
+		{
+			"name": "demo",
+			"path": "../../../../demo"
+		},
+		{
+			"name": "demo33",
+			"path": "../../../../demo33"
+		}
+	],
+	"settings": {}
+}

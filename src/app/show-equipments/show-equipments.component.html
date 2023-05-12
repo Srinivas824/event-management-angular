@@ -1,0 +1,78 @@
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+        integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous">
+  </head>
+  
+  <div class="container">
+    <div class="modal fade" id="equiModel">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <span class="close" data-dismiss="modal">&times;</span>
+                    <h4 class="modal-title">Update Form</h4>
+                </div>
+                <div class="modal-body">
+                    <form class="form-group">
+                        Enter Company Name: <input type="text" name="equipmentName" [(ngModel)]="editObject.equipmentName"
+                            class="form-control" enable="false"><br />
+                        Enter your Name: <input type="text" name="ownerName" [(ngModel)]="editObject.ownerName"
+                            class="form-control"><br />
+                        Enter your mail: <input type="text" name="ownerMail" [(ngModel)]="editObject.ownerMail"
+                            class="form-control"><br />
+                        Enter your Contact: <input type="number" name="ownerNumber" [(ngModel)]="editObject.ownerNumber"
+                            class="form-control"><br />
+                        Enter cost of equipment: <input type="number" name="cost" [(ngModel)]="editObject.cost"
+                            class="form-control"><br />
+                        <select ngModel #equipmentType="ngModel" name="equipmentType" id="equipmentType" [(ngModel)]="editObject.equipmentType">
+                                <option value="Destination Wedding">Destination Wedding</option>
+                                <option value="Food">Food</option>
+                                <option value="Music & Dance">Music & Dance</option>
+                                <option value="Makeup">Makeup</option>
+                         </select><br>
+                        Enter your Location: <input type="text" name="eventLocation" [(ngModel)]="editObject.eventLocation"
+                            class="form-control"><br />
+                         upload image: <input type="file" name="eventImage" [(ngModel)]="editObject.eventImage"
+                            class="form-control"><br />
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button class="btn btn-primary btn-sm" (click)="updateEqui()" data-dismiss="modal">Update</button>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+  
+    <table class="table table-bordered table-striped table-hover table-sm text-center">
+        <thead>
+            <tr class="bg-info text-white">
+          <th>equipmentId</th>
+          <th>CompanyName</th>
+          <th>ownerName</th>
+          <th>mail</th>
+          <th>Contact</th>
+          <th>Cost</th>
+          <th>EquipmentType</th>
+          <th>Location</th>
+          <th>EquipmentImage</th>
+          <th colspan="2">Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor='let equi of equipments'>
+          <td>{{equi.equipmentId}}</td>
+          <td>{{equi.equipmentName }}</td>
+          <td>{{equi.ownerName }}</td>
+          <td>{{equi.ownerMail }}</td>
+          <td>{{equi.ownerNumber }}</td>
+          <td>{{equi.cost }}</td>
+          <td>{{equi.equipmentType }}</td>
+          <td>{{equi.eventLocation}}</td>
+          <td>{{equi.eventImage}}</td>
+          <td><button (click)="deleteEqui(equi.equipmentId)" class="glyphicon glyphicon-trash"></button></td>
+          <td><button (click)="showEditPopup(equi)" class="glyphicon glyphicon-pencil"></button>
+        </tr>
+      </tbody>
+      </table>
+    </div>
+

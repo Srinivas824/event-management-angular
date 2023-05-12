@@ -1,0 +1,130 @@
+
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <!-- <a class="navbar-brand" routerLink="/home">Home</a> -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/home"><h2>Home</h2>
+            <span class="visually-hidden">(current)</span>
+          </a>
+        <!-- </li>
+          <li class="nav-item">
+          <a class="nav-link" routerLink="/booking">booking</a>
+        </li>  -->
+        <!-- <li class="nav-item">
+          <a class="nav-link" routerLink="/equipments">addEvent</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/equipmentdisplay"><h2>Event</h2></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact"><h2>Contact us</h2></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/#"></a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" routerLink="/payment">payment</a>
+        </li> -->
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+           <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div> 
+        </li> -->
+      </ul>
+      <form class="d-flex" #value="ngForm" (ngSubmit)="searchByEventType(value.value)">
+        <input class="form-control me-sm-2" type="search"  ngModel name="search" #name="ngModel" placeholder="Search By Location Name">
+       <button class="btn btn-primary" type="submit">Search</button>
+      </form> 
+      <a input type=button class="btn btn-outline-danger" routerLink="/login" ><h2>Log out</h2></a>
+    </div>
+  </div>
+</nav>
+
+
+
+<!-- <div class="container">
+  <div class="row">
+    <div class="col-sm">
+       <div class="item" (click)="getAllFood()" ><button id="allbutton"><img src="https://img.freepik.com/free-vector/detailed-chef-logo-template_23-2148987940.jpg?size=338&ext=jpg"></button>
+      </div> 
+    </div>
+    <div class="col-sm">
+      <div class="item" (click)="getAllDestinationWedding()"><button id="allbutton" ><img src = "https://dypdvfcjkqkg2.cloudfront.net/large/4215795-1549.jpg"></button>
+      </div>
+    </div>
+    <div class="col-sm">
+      <div class="item" (click)="getAllMusicDance()"><button id="allbutton" >Music & Dance</button>
+      </div>
+     
+    </div>
+  </div>
+</div> -->
+<h1>Wedding Categories</h1>
+
+<div class="container">
+  <div class="img-grid">
+    <div class="item" (click)="getAllFood()" ><button id="allbutton"><img src="https://www.shutterstock.com/image-vector/food-word-sign-logo-icon-600w-217063930.jpg" height="300px" width="300px"></button>
+    </div>
+    <div class="item" (click)="getAllDestinationWedding()"><button id="allbutton" ><img src = "https://www.shutterstock.com/image-vector/just-married-cute-wedding-car-600w-147813482.jpg" height="300px" width="300px"></button>
+    </div>
+    <div class="item" (click)="getAllMusicDance()"><button id="allbutton" ><img src="https://www.shutterstock.com/image-vector/dance-party-dj-logo-design-600w-567992062.jpg" height="300px" width="300px"></button>
+    </div>
+     <!-- <div class="item" (click)="getAllEquipments()"><button id="allbutton" >getAllEquipments</button>
+    </div>  -->
+    <div class="item" (click)="getAllPhotography()"><button id="allbutton" ><img src ="https://www.shutterstock.com/image-vector/vector-logo-photographer-600w-400055071.jpg" height="300px" width="300px"></button>
+    </div>
+    <!-- <img src="https://static.pexels.com/photos/247932/pexels-photo-247932.jpeg" alt="">
+    <img src="https://static.pexels.com/photos/96381/pexels-photo-96381.jpeg" alt="">
+    <img src="https://static.pexels.com/photos/450035/pexels-photo-450035.jpeg" alt=""> -->
+  </div>
+</div>
+
+  <!-- <div class="item" (click)="getAllEquipments()"><button id="allbutton" >getAllEquipments</button>
+  </div>
+  <div class="item" (click)="getAllPhotography()"><button id="allbutton" >getAllPhotography</button>
+  </div> -->
+<body>
+  <!-- <div class="l-container">
+    <div class="b-game-card">
+      <div class="b-game-card__cover" class="item" (click)="getAllPhotography()"><button id="allbutton" ><img src ="https://media.istockphoto.com/id/1312319385/vector/camera-photography-logo-icon-design-vector.jpg?s=612x612&w=0&k=20&c=3UAxKf0J4dgrqjRIrJM8sbfXBAVgrgLfGOGxIZxa0U4="></button>
+      </div>
+    </div>
+        <div class="b-game-card">
+      <div class="b-game-card__cover" style="background-image: url(https://andrewhawkes.github.io/codepen-assets/steam-game-cards/game_2.jpg);"></div>
+    </div>
+    <div class="b-game-card">
+      <div class="b-game-card__cover" style="background-image: url(https://andrewhawkes.github.io/codepen-assets/steam-game-cards/game_3.jpg);"></div>
+    </div>
+    <div class="b-game-card">
+      <div class="b-game-card__cover" style="background-image: url(https://andrewhawkes.github.io/codepen-assets/steam-game-cards/game_4.jpg);"></div>
+    </div>
+  </div> -->
+  
+
+<div class="container-fluid">
+    <div class="col-lg-4" *ngFor="let e of equipments">
+<ul class="cards">
+  <li class="cards_item">
+    <div class="card">
+      <div class="card_image"><img src="{{e.eventImage}}" width="100%" height="100%"></div>
+      <div class="card_content">
+        <h1 class="card_title">{{e.equipmentName}}   
+        </h1>
+        <p  class="card_text">Location: {{e.eventLocation}}</p>
+        <p>Cost:{{e.cost}}</p>
+        <button class="btn card_btn btn-primary" (click)="goReview(e.equipmentId)" ><h3>Book</h3></button> 
+      </div>
+    </div>
+  </li> 
+  </ul></div></div>
+</body>

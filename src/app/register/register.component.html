@@ -1,0 +1,73 @@
+<!-- <html>
+<head>  
+</head>
+<body>
+<div class="pageheader"><h1 align ="Center">Registration Form</h1></div>
+
+<br>
+<br>
+        <div class="col-lg-2"></div>
+        <div class = "col-lg-3">
+    <div class="container">
+    <div class="jumbotron">
+<form #registrationform="ngForm" (ngSubmit)="registrationformsubmit(registrationform.value)" class="form-group" novalidation>
+    <label>FullName</label><input type="text"ngModel #fullName="ngModel" name="fullName" placeholder="Enter your Name" class="form-control" required><br>
+    <label>Gender</label><input type="text"ngModel #gender="ngModel" name="gender"  placeholder="Enter your Gender" class="form-control" required><br>
+    <label>dateOfBirth</label><input type="date"ngModel #dateOfBirth="ngModel" name="dateOfBirth"  placeholder="Enter your Date of Birth" class="form-control" required><br>       
+    <label>MobileNumber</label><input type="text"ngModel #mobileNumber="ngModel" name="mobileNumber"  placeholder="Enter your MobileNumber" class="form-control" required><br>
+    <label>Address</label><input type="text"ngModel #address="ngModel" name="address" placeholder="Enter your A" class="form-control" required><br>
+    <label>EmailId</label><input type="email"ngModel #email="ngModel" name="email"  placeholder="Enter your EmailId" class="form-control" required><br>
+    <label>Password</label><input type="password"ngModel #password="ngModel" name="password"  placeholder="Enter your password" class="form-control" required><br>
+    <div>
+    <label><input type="checkbox">Remember Me</label></div>
+     <button class="btn btn-primary btn-lg" [disabled]="!registrationform.valid">Register</button> 
+</form>
+ <p *ngIf="fullName.errors?.['required'] && fullName.touched"> Name is Mandatory</p> 
+ <p *ngIf="gender.errors?.['required'] && gender.touched"> Gender Feild Cannot be Empty</p> 
+ <p *ngIf="dateOfBirth.errors?.['required'] && dateOfBirth.touched"> dateOfBirth is Mandatory</p> 
+ <p *ngIf="mobileNumber.errors?.['required'] && mobileNumber.touched"> mobileNumber is Mandatory</p> 
+ <p *ngIf="email.errors?.['required'] && email.touched"> EmailID feild cannot be Empty</p> 
+ <p *ngIf="address.errors?.['required'] && address.touched"> Address feild cannot be Empty</p>
+ <p *ngIf="password.errors?.['required'] && password.touched"> Password is Mandatory</p> 
+</div>
+</div>
+</div>
+
+</body>
+</html> -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Registration</title>
+  </head>
+  <body>
+    <div class="login-page">
+      <div class="avatar">
+        <img src="https://cdn.pixabay.com/photo/2014/04/02/14/10/female-306407_960_720.png" alt="Avatar">
+      </div>
+      <div class="form">
+        <h2>Registration</h2>
+        <form #registrationform="ngForm" (ngSubmit)="registrationformsubmit(registrationform.value)" class="form-group" novalidation>
+            <input type="text"ngModel #fullName="ngModel" name="fullName" placeholder="Enter your Name" class="form-control" required><br>     
+            <input type="text"ngModel #mobileNumber="ngModel" name="mobileNumber"  placeholder="Enter your MobileNumber" class="form-control"  minlength="10" maxlength="10"required><br>
+            <input type="text"ngModel #address="ngModel" name="address" placeholder="Enter your Address" class="form-control" required><br>
+            <input type="text"ngModel #email="ngModel" name="email"  placeholder="Enter your Mail" class="form-control" required><br>
+            <input type="password"ngModel #password="ngModel" name="password"  placeholder="Enter your password" class="form-control" required><br>
+           
+            <div>
+            <label><input type="checkbox">Remember Me</label></div>
+             <button class="btn btn-primary btn-lg" [disabled]="!registrationform.valid" >Register</button> 
+        </form>
+         <p *ngIf="fullName.errors?.['required'] && fullName.touched"> Name is Mandatory</p>  
+         <p *ngIf="mobileNumber.errors?.['required'] && mobileNumber.touched"> mobileNumber is Mandatory</p> 
+         <p *ngIf="email.errors?.['required'] && email.touched"> EmailID feild cannot be Empty</p> 
+         <p *ngIf="address.errors?.['required'] && address.touched"> Address feild cannot be Empty</p>
+         <p *ngIf="password.errors?.['required'] && password.touched"> Password is Mandatory</p> 
+      </div>
+    </div>
+    <br> <br> <br> <br> 
+  </body>
+</html>
+<div *ngIf="email.errors?.['required'] && email.touched">Login Id is mandatory</div>
+<div *ngIf="email.errors?.['minlength']">Login Id must contains min 6 charact</div>
+<div *ngIf="password.errors?.['required'] && password.touched">Password is mandatory</div>

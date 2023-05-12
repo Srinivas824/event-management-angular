@@ -1,0 +1,64 @@
+<!-- <form #equipmentForm="ngForm" (ngSubmit)="equipmentFormSubmit(equipmentForm.value)" class="form-group" novalidation>
+Enter your CompanyName:<input type="text"ngModel #equipmentName="ngModel"name="equipmentName" class="form-control"><br>
+Enter your Name:<input type="text"ngModel #ownerName="ngModel" name="ownerName" class="form-control"><br>
+Enter your Mail:<input type="email"ngModel #ownerMail="ngModel" name="ownerMail" class="form-control"><br>
+Enter your Contact:<input type="number"ngModel #ownerNumber="ngModel" name="ownerNumber" class="form-control"><br>
+Enter cost of equipment:<input type="number"ngModel #cost="ngModel" name="cost" class="form-control"><br>
+<label for="equipmentType">Choose Event type:</label>
+<select ngModel #equipmentType="ngModel" name="equipmentType" id="equipmentType">
+  <option value="Destination Wedding">Destination Wedding</option>
+  <option value="Food">Food</option>
+  <option value="Music & Dance">Music & Dance</option>
+  <option value="Makeup">Makeup</option>
+</select><br>
+Enter your Location:<input type="text"ngModel #eventLocation="ngModel" name="eventLocation" class="form-control"><br>
+ upload imgaes:<input type="file" #Image accept ="eventImage/*" (change)="handleFileInput()($event.target.files)" class="form-control"> 
+upload images:<input type="text" ngModel #eventImage="ngModel" name="eventImage" class="form-control"><br>
+<button class="btn btn-primary btn-lg" [disabled]="!equipmentForm.valid">Register</button>
+</form> -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Register as a Vendor</title>
+  </head>
+  <body>
+    <div class="login-page">
+      <div class="avatar">
+        <img src="https://cdn.pixabay.com/photo/2014/04/02/14/10/female-306407_960_720.png" alt="Avatar">
+      </div>
+      <div class="form">
+        <h2>Register as a Vendor</h2>
+        <form #equipmentForm="ngForm" (ngSubmit)="equipmentFormSubmit(equipmentForm.value)" class="form-group" novalidation>
+          <input type="text"ngModel #equipmentName="ngModel"name="equipmentName"required placeholder="Enter your Brand Name"   class="form-control"><br>
+          <input type="text"ngModel #ownerName="ngModel" name="ownerName" required placeholder="Enter Your Name" class="form-control"><br>
+          <input type="text"ngModel #ownerMail="ngModel" name="ownerMail"required placeholder="Enter your Mail" class="form-control"><br>
+          <input type="number"ngModel #ownerNumber="ngModel" name="ownerNumber"required placeholder="Enter your Mobile Number" minlength ="10" maxlength="10" class="form-control"><br>
+          <input type="number"ngModel #cost="ngModel" name="cost" required placeholder="Cost" class="form-control"><br>
+          <label for="equipmentType" placeholder="select vendor type"></label>
+         <p style="font-size: larger;">Event Type:</p><select ngModel #equipmentType="ngModel" name="equipmentType" required   id="equipmentType" class="form-control">
+            <option value="Destination Wedding">Destination Wedding</option>
+            <option value="Food">Food</option>
+            <option value="Music & Dance">Music & Dance</option>
+            <option value="PhotoGraphy">PhotoGraphy</option>
+          </select><br>
+          <input type="text"ngModel #eventLocation="ngModel" name="eventLocation" required placeholder="Location" class="form-control"><br>
+          <!-- upload imgaes:<input type="file" #Image accept ="eventImage/*" (change)="handleFileInput()($event.target.files)" class="form-control"> -->
+          <input type="text" ngModel #eventImage="ngModel" name="eventImage" required placeholder="Image path" class="form-control"><br>
+          <input type="text" ngModel #eventImage1="ngModel" name="eventImage1" required placeholder="Image path" class="form-control"><br>
+          <input type="text" ngModel #eventImage2="ngModel" name="eventImage2" required placeholder="Image path" class="form-control"><br>
+          <input type="text"ngModel #descrption="ngModel"name="descrption"required placeholder="Write about your Brand Description"   class="form-control"><br>
+          <button class="btn btn-primary btn-lg" [disabled]="!equipmentForm.valid">Register</button>
+          </form>
+      </div>
+    </div>
+    <p *ngIf="equipmentName.errors?.['required'] && equipmentName.touched"> Brand Name is Mandatory</p> 
+    <p *ngIf="ownerName.errors?.['required'] && ownerName.touched"> Name is Mandatory</p>
+     <p *ngIf="ownerMail.errors?.['required'] && ownerMail.touched"> Mail is Mandatory</p> 
+     <p *ngIf="ownerNumber.errors?.['required'] && ownerNumber.touched"> Number is Mandatory</p> 
+     <p *ngIf="equipmentType.errors?.['required'] && equipmentType.touched"> Vendor Type is Mandatory</p> 
+     <p *ngIf="eventImage.errors?.['required'] && eventImage.touched"> path is Mandatory</p> 
+     <p *ngIf="eventLocation.errors?.['required'] && eventLocation.touched"> Location is Mandatory</p> 
+     <p *ngIf="cost.errors?.['required'] && cost.touched"> cost is Mandatory</p> 
+    <br> <br> <br> 
+  </body>
+</html>

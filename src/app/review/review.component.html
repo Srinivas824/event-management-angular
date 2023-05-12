@@ -1,0 +1,117 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="container-fluid">
+    <!-- <a class="navbar-brand" routerLink="/home">Home</a> -->
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor01" aria-controls="navbarColor01" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarColor01">
+      <ul class="navbar-nav me-auto">
+        <li class="nav-item">
+          <a class="nav-link active" routerLink="/home"><h2>Home</h2>
+            <span class="visually-hidden">(current)</span>
+          </a>
+        <!-- </li>
+          <li class="nav-item">
+          <a class="nav-link" routerLink="/booking">booking</a>
+        </li>  -->
+        <!-- <li class="nav-item">
+          <a class="nav-link" routerLink="/equipments">addEvent</a>
+        </li> -->
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/equipmentdisplay"><h2>Event</h2></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/contact"><h2>Contact us</h2></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" routerLink="/#"></a>
+        </li>
+        <!-- <li class="nav-item">
+          <a class="nav-link" routerLink="/payment">payment</a>
+        </li> -->
+        <!-- <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" data-bs-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Dropdown</a>
+           <div class="dropdown-menu">
+            <a class="dropdown-item" href="#">Action</a>
+            <a class="dropdown-item" href="#">Another action</a>
+            <a class="dropdown-item" href="#">Something else here</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="#">Separated link</a>
+          </div> 
+        </li> -->
+      </ul>
+      <form class="d-flex" #value="ngForm" (ngSubmit)="searchByEventType(value.value)">
+        <input class="form-control me-sm-2" type="search"  ngModel name="search" #name="ngModel" placeholder="Search By Location Name">
+       <button class="btn btn-primary" type="submit">Search</button>
+      </form> 
+      <a input type=button class="btn btn-outline-danger" routerLink="/login" ><h2>Log out</h2></a>
+    </div>
+  </div>
+</nav>
+
+    <div *ngFor="let e of equipment">
+          <div>
+          <img src="{{e.eventImage}}" style="width: 100%; height: 100%;">
+        </div>
+
+      
+      
+      <!-- <div><img src="{{e.eventImage}}" width="100%" height="100%"></div> -->
+      <div class="row">
+        <div class="column">
+          <h1 style="text-align: center;">{{e.equipmentName}} </h1>
+        </div>
+        <div class="column" >
+          <h1 style="text-align: center;">Location: {{e.eventLocation}}</h1>
+        </div>
+        <div class="column" >
+          <h1 style="text-align: center;">Cost:{{e.cost}}</h1>
+        </div>
+        <div class="column">
+          <div class="rating">
+            <i class="glyphicon glyphicon-star">{{e.review}}</i>
+          </div>
+        </div>
+      </div>
+        <!-- <p style="text-align: center;">Location: {{e.eventLocation}}</p> -->
+        <!-- <p style="text-align: center;">Cost:{{e.cost}}</p> -->
+
+        <!-- <div class="rating">
+          <i class="glyphicon glyphicon-star">{{e.review}}</i>
+        </div> -->
+        <br><br>
+        <div class="col-lg-5"></div>
+          <button class="btn btn-primary" routerLink="/booking" ><h1>Book</h1></button> <br>
+       <br><br>
+           <div class="container">
+            <div class="jumbotron">
+              <div class="col-lg-1"></div>
+          <div class="row1">
+            <div class="column">  
+              <img src="{{e.eventImage1}}"  style="width:100%" class="img-rounded">
+            </div>
+            <div class="col-lg-3"></div>
+            <div class="column1">
+              <img src="{{e.eventImage2}}" style="width:80%" height="170px" class="img-rounded">
+            </div>
+           
+          </div>
+        </div>
+      </div>
+
+
+
+
+          <h1 style="text-align: center;">About</h1>
+          <p style="font-size: large;">{{e.descrption}}</p>
+        <!-- <div  ><img src="{{e.eventImage1}}" >
+        <img src="{{e.eventImage2}}"></div> -->
+        
+        </div>
+        <!-- <p>{{e.descrption}}</p> -->
+       
+    
+    
+    
+ 
+

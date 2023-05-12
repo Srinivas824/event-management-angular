@@ -1,0 +1,40 @@
+
+<!-- <div class="jumbotron">
+<form #loginForm="ngForm" (ngSubmit)="loginFormSubmit(loginForm.value)" novalidate>
+    Enter login id <input type="text" ngModel #email="ngModel" name="email" minlength="6" maxlength="50" required><br/>
+    Enter password <input type="password" ngModel #password= "ngModel" name="password" minlength="3" maxlength="10" required><br/>
+    <button [disabled]="loginForm.invalid">Login</button>
+    </form>
+    <h5>Create an account</h5><a routerLink="/register"><h5>Register</h5></a>
+    <div *ngIf="email.errors?.['required'] && email.touched">Login Id is mandatory</div>
+    <div *ngIf="email.errors?.['minlength']">Login Id must contains min 6 charact</div>
+    <div *ngIf="password.errors?.['required'] && password.touched">Password is mandatory</div>
+</div> -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Login Page</title>
+  </head>
+  <body>
+    <div class="login-page">
+      <div class="avatar">
+        <img src="https://cdn.pixabay.com/photo/2014/04/02/14/10/female-306407_960_720.png" alt="Avatar">
+      </div>
+      <div class="form">
+        <h2>Login</h2>
+        <form #loginForm="ngForm" (ngSubmit)="loginFormSubmit(loginForm.value)" novalidate>
+            <input type="text" ngModel #email="ngModel" name="email" minlength="6" maxlength="50" required placeholder="Username">
+             <input type="password" ngModel #password= "ngModel" name="password" minlength="3" maxlength="10" required placeholder="password">
+            <button [disabled]="loginForm.invalid">Login</button>
+            </form>
+        <p class="message">Not registered?<a routerLink="/register">Create an account</a></p>
+        <p class="message">register As a Vendor? <a routerLink ="/equipments">Click here to register</a></p>
+      </div>
+    </div>
+    <div *ngIf="email.errors?.['required'] && email.touched">Login Id is mandatory</div>
+   <div *ngIf="email.errors?.['minlength'] && email.touched">Login Id must contains min 6 charact</div>
+   <div *ngIf="password.errors?.['required'] && password.touched">Password is mandatory</div>
+
+    <br> <br> <br> <br> 
+  </body>
+</html>
